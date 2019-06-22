@@ -12,7 +12,11 @@
                 <div class="panel panel-default">
                   
                   {{ if .Params.img }}
+                  {{ if .Params.refLocal}}
                   <img width="100%" src="{{ .Site.BaseURL }}images/{{ .Params.img }}" alt="{{ .Title }}">
+                  {{ else }}
+                  <img width="100%" src="{{ .Params.img }}" alt="{{ .Params.title }}">
+                  {{ end }}
                   {{ else }}
                   <img width="100%" src="{{ .Site.BaseURL }}images/{{ .Site.Params.defaultImage }}" alt="{{ .Site.Title }}">
                   {{ end }}
